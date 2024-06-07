@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    <!-- iOS用フルスクリーン -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Android用フルスクリーン -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- ファビコン用 -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://3zukie.github.io/KisikilDash/assets/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" href="https://3zukie.github.io/KisikilDash/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" type="image/x-icon" href="https://3zukie.github.io/KisikilDash/assets/img/favicons/android-chrome-256x256.png">
+
+    <!-- SEO対策 -->
+    <meta name="description" content="遊戯王で行うWordleゲームです。" />
+    <meta name="keywords" content="遊戯王,二次創作" />
+    <meta property="og:description" content="完全無料の遊戯王二次創作ゲームで遊ぼう！スマホ対応です。" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@3zukiE" />
+    <meta name="twitter:description" content="完全無料の遊戯王二次創作ゲームで遊ぼう！スマホ対応です。" />
+    <meta property="og:title" content="遊戯王ワードル" />
+    <meta property="og:image" content="https://3zukie.github.io/KisikilDash/assets/img/gallery/twittercard.jpg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="670" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://3zukie.github.io/YugiohWordle/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>遊戯王Wordle</title>
+</head>
+<body oncontextmenu="return false;">
+    <title>遊戯王Wordle</title>
+    <div class="header">
+        <h1>遊戯王Wordle</h1>
+        <span id="info-icon">&#9432;</span>
+    </div>
+    <div id="game">
+      <!-- Wordle Grid -->
+      <div id="grid"></div>
+
+      <!-- 入力欄 -->
+      <form id="guess-form">
+        <input type="text" id="guess-input" placeholder="5文字のカード名">
+        <!-- 推測ボタン -->
+        <button id="guess-button">推測する</button>
+      </form>
+      <br>
+      <!-- ボタンコンテナ -->
+      <div class="button-container">
+          <!-- ヒントボタン -->
+          <button id="hint-button">ヒントを見る</button>
+          <!-- ギブアップボタン -->
+          <button id="giveup-button">ギブアップ</button>
+      </div>
+      <br>
+      <!-- ヒント -->
+      <div id="hints">
+        <p id="hint1">カードの分類： &nbsp; <span class="hint-text"></span></p>
+        <p id="hint2">カードの詳細： &nbsp; <span class="hint-text"></span></p>
+        <p id="hint3">効果10文字： &nbsp; <span class="hint-text"></span></p>
+        <p id="hint4">カード名の最後： &nbsp; <span id="last-character" class="hint-text"></span></p>
+        <p id="hint5">効果20文字： &nbsp; <span class="hint-text"></span></p>
+      </div>
+      <br>
+      <textarea id="memo" placeholder="メモ欄としてご利用ください"></textarea>
+    </div>
+    
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p>あそびかた～</p>
+        <p>遊戯王の5文字のカード名を当てよう<br>場所と文字が一致している場所は緑色に、<br>文字のみが一致している場所は黄色に表示されるよ<br></p>
+        <p class="important-note">★注★</p>
+        <p>文字の読み方ではなく、記号含む表記上5文字が対象<br>例：<br>「Aiの儀式」は5文字<br>「Ai－SHOW」は読みがアイショウだが7文字</p>
+        <p>また、空白は0文字としてカウント<br>例：<br>「VS 蛟龍」は四文字<br>「VS ラゼン」は五文字</p>
+        <p class="important-note">現在確認してる現象</p>
+        <p>・正解が「ABCDE」の時、「AAAAA」と入力すると最初のAは緑になるが残りのAが全部黄色になる（黒にしたい）</p>
+
+
+        <p>不明点やバグ等あればTwitter: @3zukiE まで</p>
+      </div>
+    </div>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
