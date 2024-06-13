@@ -89,7 +89,8 @@ function resetGame() {
                 selectedWord.hint2,
                 selectedWord.hint3.substring(0, 10), // hint3の最初の10文字
                 trimmedWORD.charAt(trimmedWORD.length - 1),
-                selectedWord.hint3.substring(0, 20)  // hint5としてhint3の最初の20文字
+                selectedWord.hint3.substring(0, 20),  // hint5としてhint3の最初の20文字
+                trimmedWORD.charAt(trimmedWORD.length - 5)
             ];
         })
         .catch(error => console.error('Error loading JSON:', error));
@@ -121,7 +122,8 @@ fetch('assets/words.json')
             selectedWord.hint2,
             selectedWord.hint3.substring(0, 10), // hint3の最初の10文字
             trimmedWORD.charAt(trimmedWORD.length - 1),
-            selectedWord.hint3.substring(0, 20)  // hint5としてhint3の最初の20文字
+            selectedWord.hint3.substring(0, 20),  // hint5としてhint3の最初の20文字
+            trimmedWORD.charAt(trimmedWORD.length - 5)
         ];
         initializeGrid();
     })
@@ -224,11 +226,11 @@ function showModal(isGameOver) {
     if (isGameOver) {
         // ゲームオーバー時のメッセージ
         message = `ゲームオーバー！<br><br>正解は... <span style="color: red; font-size: 30px;">${WORD}</span>`;
-        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`ゲームオーバー！\n「${WORD}」を推測できなかった...`)}`;
+        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`ゲームオーバー！\n#遊戯王Wordle で「${WORD}」を推測できなかった...\n https://3zukie.github.io/YugiohWordle/`)}`;
     } else {
         // クリア時のメッセージ
         message = `<span style="color: green; font-size: 30px; text-transform: uppercase;">クリア！</span><br><br><span style="color: red; font-size: 30px;">${WORD.toUpperCase()}</span>を的中しました！<br><br>${attempts}回目の推測<br>使用したヒントの回数：${hintIndex}`;
-        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`#遊戯王Wordle で${WORD}を${attempts}手で推測したよ！`)}`;
+        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`#遊戯王Wordle で${WORD}を${attempts}手で推測したよ！\n使用したヒントの回数：${hintIndex}\n https://3zukie.github.io/YugiohWordle/`)}`;
     }
 
     const messageText = document.createElement('div');
