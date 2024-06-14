@@ -226,11 +226,11 @@ function showModal(isGameOver) {
     if (isGameOver) {
         // ゲームオーバー時のメッセージ
         message = `ゲームオーバー！<br><br>正解は... <span style="color: red; font-size: 30px;">${WORD}</span>`;
-        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`ゲームオーバー！\n#遊戯王Wordle で「${WORD}」を推測できなかった...\n https://3zukie.github.io/YugiohWordle/`)}`;
+        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`ゲームオーバー！\n#遊戯王Wordle で「${WORD}」を推測できなかった...\nhttps://3zukie.github.io/YugiohWordle/`)}`;
     } else {
         // クリア時のメッセージ
         message = `<span style="color: green; font-size: 30px; text-transform: uppercase;">クリア！</span><br><br><span style="color: red; font-size: 30px;">${WORD.toUpperCase()}</span>を的中しました！<br><br>${attempts}回目の推測<br>使用したヒントの回数：${hintIndex}`;
-        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`#遊戯王Wordle で${WORD}を${attempts}手で推測したよ！\n使用したヒントの回数：${hintIndex}\n https://3zukie.github.io/YugiohWordle/`)}`;
+        tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`#遊戯王Wordle で${WORD}を${attempts}手で推測したよ！\n使用したヒントの回数：${hintIndex}回\nhttps://3zukie.github.io/YugiohWordle/`)}`;
     }
 
     const messageText = document.createElement('div');
