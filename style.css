@@ -103,6 +103,11 @@ button {
     margin-bottom: 20px;
 }
 
+#grid.hard-mode {
+    grid-template-columns: 1fr; /* 1列 */
+    gap: 20px; /* ハードモードのグリッド間の間隔を広く */
+}
+
 .row {
     display: grid;
     grid-template-columns: repeat(5, 40px) 10px auto;
@@ -149,6 +154,14 @@ button {
     white-space: nowrap;
 }
 
+.hint.hard-mode .hint-text {
+    width: 50%; /* 70% の幅を指定 */
+    vertical-align: top;
+    white-space: pre-wrap; /* 折り返しを有効に */
+    word-wrap: break-word; /* 単語の途中で改行 */
+    overflow-wrap: break-word; /* 単語の途中で改行 */
+}
+
 #hints p {
     display: flex;
     justify-content: space-between;
@@ -184,6 +197,9 @@ button {
         width: 50%; /* 画面幅の2/3 */
         gap: 5px;
         justify-content: center;
+    }
+    #grid.hard-mode {
+        gap: 10px; /* ハードモードのグリッド間の間隔を広く */
     }
     .row {
         display: grid;

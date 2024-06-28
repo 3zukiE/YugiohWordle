@@ -39,6 +39,11 @@
       <h1>遊戯王Wordle</h1>
       <span id="info-icon">&#9432;</span>
   </div>
+  <select id="difficulty-select">
+    <option value="normal">ノーマル</option>
+    <option value="hard">ハード</option>
+  </select>
+  <br>
   <div id="game">
     <!-- Wordle Grid -->
     <div id="grid"></div>
@@ -60,16 +65,34 @@
     <br>
     <!-- ヒント -->
     <div id="hints">
-      <p id="hint1">カードの分類： &nbsp; <span class="hint-text"></span></p>
-      <p id="hint2">カードの詳細： &nbsp; <span class="hint-text"></span></p>
-      <p id="hint3">効果10文字： &nbsp; <span class="hint-text"></span></p>
-      <p id="hint4">カード名の最後： &nbsp; <span id="last-character" class="hint-text"></span></p>
-      <p id="hint5">効果20文字： &nbsp; <span class="hint-text"></span></p>
-      <p id="hint6">カード名の最初： &nbsp; <span id="first-character" class="hint-text"></span></p>
+      <div id="hint1" class="hint">
+        <span class="hint-label">カードの分類：</span>
+        <span class="hint-text"></span>
+      </div>
+      <div id="hint2" class="hint">
+        <span class="hint-label">カードの詳細：</span>
+        <span class="hint-text"></span>
+      </div>
+      <div id="hint3" class="hint">
+        <span class="hint-label">効果10文字：</span>
+        <span class="hint-text"></span>
+      </div>
+      <div id="hint4" class="hint">
+        <span class="hint-label">カード名の最後：</span>
+        <span class="hint-text"></span>
+      </div>
+      <div id="hint5" class="hint">
+        <span class="hint-label">効果20文字：</span>
+        <span class="hint-text"></span>
+      </div>
+      <div id="hint6" class="hint">
+        <span class="hint-label">カード名の最初：</span>
+        <span class="hint-text"></span>
+      </div>
     </div>
     <br>
     <!-- <textarea id="memo" placeholder="メモ欄としてご利用ください"></textarea> -->
-    <h4 >瑞稀(@3zukiE)</h4>
+    <h4>瑞稀(@3zukiE) <span id="last-updated">(最終更新日: 2024年6月28日)</span></h4>
   </div>
   
   <!-- モーダル -->
@@ -83,15 +106,16 @@
       <p class="important-note">★注★</p>
       <p>文字の読み方ではなく、記号含む表記上5文字が対象<br>例：<br>「Aiの儀式」は5文字<br>「Ai－SHOW」は読みがアイショウだが7文字</p>
       <p>また、空白は0文字としてカウント<br>例：<br>「VS 蛟龍」は四文字<br>「VS ラゼン」は五文字</p>
-      <p>※アニメ産カードなどは対象外です</p>
+      <p>※ラッシュデュエル・アニメ産カードなどは対象外です</p>
       <br>
       <p class="important-note">現在確認してる現象</p>
       <p>・正解が「ABCDE」の時、「AAAAA」と入力すると最初のAは緑になるが残りのAが全部黄色になる（黒にしたい）</p>
+      <p>・正解が平仮名なのに、片仮名でも黄色になるので正解が分かりづらい（仕様ではあるが、ややこしい）</p>
       <br>
       <p>その他、不明点やバグ等あればTwitter: @3zukiE まで</p>
       <p>他の自作ゲームもよろしく→ <a href="https://3zukie.github.io/KisikilDash/">キスキルダッシュ！</a></p>
     </div>
   </div>
-  <script src="js/main.js" type="module"></script>
+  <script src="js/main.js" type="module" defer></script>
 </body>
 </html>
