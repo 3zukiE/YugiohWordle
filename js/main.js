@@ -143,8 +143,8 @@ function fetchWordData() {
                 if (hint3LabelElem) hint3LabelElem.textContent = "漢字の登場数：";
                 if (hint3Elem) hint3Elem.textContent = kanjiCount;
 
-                if (hint4Elem) hint4Elem.textContent = selectedWord.hint3.slice(-15);
-                if (hint4LabelElem) hint4LabelElem.textContent = "効果15文字（後ろから）：";
+                if (hint4Elem) hint4Elem.textContent = selectedWord.hint3.slice(-10);
+                if (hint4LabelElem) hint4LabelElem.textContent = "効果10文字（後ろから）：";
 
                 if (hint5Elem) hint5Elem.style.display = 'none'; // 効果20文字を非表示
                 if (hint6Elem) hint6Elem.style.display = 'none'; // カード名の最初を非表示
