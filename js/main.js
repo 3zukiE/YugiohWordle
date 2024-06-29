@@ -159,6 +159,7 @@ function fetchWordData() {
                 document.getElementById('hint5').style.display = '';
                 document.getElementById('hint6').style.display = '';
                 document.getElementById('hint3').querySelector('.hint-label').textContent = "効果10文字：";
+                document.getElementById('hint4').querySelector('.hint-label').textContent = "カード名の最後：";
                 document.getElementById('hint4').classList.remove('hard-mode'); // hint3 から hard-mode クラスを削除
             }
         })
